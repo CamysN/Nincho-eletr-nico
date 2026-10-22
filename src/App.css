@@ -54,8 +54,8 @@
 
 .poster-frame__surface {
   background: #ffdedf;
-  border: clamp(7px, 1.9vw, 30px) solid #fdfcf3;
-  box-shadow: 0 0 15px rgb(35 24 20 / 45%);
+  border: clamp(15px, 2vw, 55px) solid #fdfcf3;
+  box-shadow: 0 0 65px rgb(35 24 20 / 75%);
   height: 100%;
   overflow: hidden;
   width: 100%;
@@ -65,6 +65,24 @@
   display: block;
   height: 100%;
   object-fit: cover;
+  width: 100%;
+}
+
+.poster-frame__qrcode {
+  aspect-ratio: 1;
+  background: #fdfcf3;
+  left: -3%;
+  padding: 1%;
+  position: absolute;
+  top: -1.5%;
+  width: 17%;
+  z-index: 1;
+}
+
+.poster-frame__qrcode img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
   width: 100%;
 }
 
@@ -115,29 +133,29 @@
   animation: ticket-sway 2.5s ease-in-out infinite alternate;
   background: #fdfcf3;
   border: 1px solid #670a07;
-  bottom: -3%;
+  bottom: -2%;
   color: #670a07;
   display: flex;
   justify-content: center;
   left: 50%;
   /* min-height: 7.5%; */
-  padding: clamp(16px, 3.5vw, 90px) clamp(16px, 3.5vw, 90px);
+  padding: clamp(16px, 3.5vw, 130px) clamp(16px, 3.5vw, 130px);
   position: absolute;
   transform: translateX(-50%) rotate(-4deg);
-  width: 900px;
+  /* width: 1000px;
   max-width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box; */
   /*  width: clamp(148px, 41.5%, 295px); */
 }
 
-.poster-frame__ticket span {
+/* .poster-frame__ticket span {
   width: 100%;
   white-space: normal;
   overflow-wrap: break-word;
   box-sizing: border-box;
   margin: 0;
 }
-
+ */
 @keyframes ticket-sway {
   from {
     transform: translateX(-50%) rotate(-4deg);
@@ -149,18 +167,23 @@
 }
 
 .poster-frame__ticket::before {
-  border: 2px solid #670a07;
+  border: 1px solid #670a07;
   content: "";
-  inset: 15px;
+  inset: clamp(0.5rem, 1vw, 2rem);
   pointer-events: none;
   position: absolute;
 }
 
 .poster-frame__ticket span {
   display: block;
-  font-size: clamp(1rem, 7.1vw, 9.75rem);
+  font-size: clamp(3rem, 5vw, 15.75rem);
   line-height: 1;
   text-align: center;
+  /* width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  box-sizing: border-box; */
+  margin: 0;
   white-space: pre;
 }
 

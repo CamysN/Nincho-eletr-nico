@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import sealImage from './assets/selo-logo.png'
-import image01 from './assets/cartaz01.jpg'
+import qrCodeImage from './assets/qrCode.svg'
+import image01 from './assets/cartaz01.png'
 import image02 from './assets/cartaz02.jpg'
 import image03 from './assets/cartaz03.jpg'
 import image04 from './assets/cartaz04.jpg'
+
 
 const DISPLAY_DURATION = 10_000
 const TRANSITION_DURATION = 1_200
@@ -66,24 +68,28 @@ const posters = [
   {
     id: 'cartaz-exemplo',
     image: image01,
-    text: 'Toda semana de quinta a domingo ás 18',
+    qrCode: qrCodeImage,
+    text: 'Toda semana de quinta a domingo ás 18:30',
     alt: 'Cartaz da atração',
   },
   {
     id: 'cartaz-exemplo',
     image: image02,
-    text: 'Toda semana de sexta',
+    qrCode: qrCodeImage,
+    text: 'Toda semana de sexta a domingo',
     alt: 'Cartaz da atração',
   },
   {
     id: 'cartaz-exemplo',
     image: image03,
-    text: '31/12 às 15:00',
+    qrCode: qrCodeImage,
+    text: '31/12 às 15:00 e 10/01 às 08:15 e 10/01 às 08:15',
     alt: 'Cartaz da atração',
   },
   {
     id: 'cartaz-exemplo',
     image: image04,
+    qrCode: qrCodeImage,
     text: '10/01 às 08:15',
     alt: 'Cartaz da atração',
   },
@@ -131,6 +137,12 @@ export default function App() {
                 src={poster.image}
                 alt={poster.alt}
               />
+            )}
+          </div>
+
+          <div className="poster-frame__qrcode">
+            {poster.qrCode && (
+              <img src={poster.qrCode} alt="QR code" />
             )}
           </div>
 
